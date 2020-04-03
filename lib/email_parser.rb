@@ -11,8 +11,13 @@ class EmailAddressParser
       end
         
       def parse
-       new_email= @email.split(",").map  {|line| line.strip}
-      new_email.uniq
+       new_email=  @email.split
+       new_mail = new_email.map do |line| line.split(",")
+       end
+       new_mail.flatten.uniq
+       
+       #.map  {|line| line.strip}
+      #new_email.uniq
       end 
         
 end
